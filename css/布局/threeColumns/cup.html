@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局-圣杯布局方案</title>
+  <style>
+    .container {
+      margin-left: 300px;
+      margin-right: 300px;
+    }
+    .main, .left, .right {
+      height: 100px;
+    }
+    .right {
+      height: 300px ;
+    }
+    .main {
+      float: left;
+      width: 100%;
+      background: yellow;
+    }
+    .left {
+      float: left;
+      margin-left: -100%;
+      width: 300px;
+      position: relative;
+      left: -300px;
+      background: red;
+    }
+    .right {
+      float: left;
+      margin-left: -300px;
+      width: 300px;
+      position: relative;
+      left: 300px;
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <article class="container">
+    <main class="main">main</main>
+    <aside class="left">left</aside>
+    <aside class="right">right</aside>
+  </article>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局-BFC布局方案</title>
+  <style>
+    .left, .right, .main {
+      height: 100px;
+    }
+    .left {
+      float: left;
+      width: 300px;
+      background: red;
+    }
+    .main {
+      /* 创建BFC */
+      overflow: hidden;
+      background: yellow;
+    }
+    .right {
+      float: right;
+      width: 300px;
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <article class="container">
+    <aside class="left">left</aside>
+    <aside class="right">right</aside>
+    <main class="main">main</main>
+  </article>
+</body>
+</html>

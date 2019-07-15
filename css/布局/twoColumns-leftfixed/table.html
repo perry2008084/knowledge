@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>两栏布局左侧固定-表格布局方案</title>
+  <style>
+    .container {
+      display: table;
+      width: 100%;
+    }
+    .left, .main {
+      display: table-cell;
+      height: 100px;
+    }
+    .left {
+      width: 100px;
+      background: red;
+    }
+    .main {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <article class="container">
+    <aside class="left"></aside>
+    <main class="main"></main>
+  </article>
+</body>
+</html>

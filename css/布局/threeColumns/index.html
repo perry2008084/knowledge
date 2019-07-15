@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局: float布局方案</title>
+</head>
+<body>
+  <!-- 浮动布局方案 -->
+  <div class="box float">
+    <style>
+      .box {
+        margin-bottom: 20px;
+      }
+      .basebox {
+        height: 100px;
+      }
+      .float-side {
+        width: 300px;
+      }
+      .float-left {
+        float: left;
+        background-color: red;
+      }
+      .float-right {
+        float: right;
+        background-color: blue;
+      }
+      .float-middle {
+        margin-left: 300px;
+        margin-right: 300px;
+        background-color: yellow;
+      }
+    </style>
+    <div class="basebox float-side float-left">
+      left
+    </div>
+    <div class="basebox float-side float-right">
+      right
+    </div>
+    <div class="basebox float-middle">
+      center
+    </div>
+  </div>
+
+  <!-- 弹性盒布局方案 -->
+  <div class="box flex">
+    <style>
+      .flex {
+        display: flex;
+      }
+      .basebox {
+        height: 100px;
+      }
+      .flex-left, .flex-right {
+        flex: 0 0 300px;
+      }
+      .flex-left {
+        background: red;
+      }
+      .flex-right {
+        background: blue;
+      }
+      .flex-middle {
+        flex: 1 1 auto;
+        background: yellow;
+      }
+    </style>
+    <div class="basebox flex-left">left</div>
+    <div class="basebox flex-middle">center</div>
+    <div class="basebox flex-right">right</div>
+  </div>
+
+  <!-- 绝对定位布局方案 -->
+  <div class="box absolute">
+    <style>
+      .box {
+        position: relative;
+      }
+      .basebox {
+        height: 100px;
+      }
+      .absolute-left {
+        width: 300px;
+        background: red;
+      }
+      .absolute-right {
+        width: 300px;
+        background: blue;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .absolute-middle {
+        position: absolute;
+        top: 0;
+        left: 300px;
+        right: 300px;
+        background: yellow;
+      }
+    </style>
+    <div class="basebox absolute-left">left</div>
+    <div class="basebox absolute-right">right</div>
+    <div class="basebox absolute-middle">center</div>
+  </div>
+
+  <!-- 绝对定位布局方案2，左右使用定位 -->
+  <div class="box absoluteTwo">
+    <style>
+      .basebox {
+        height: 100px;
+      }
+      .absoluteTwo-middle {
+        background: yellow;
+        margin-left: 300px;
+        margin-right: 300px;
+      }
+      .absoluteTwo-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 300px;
+        background: red;
+      }
+      .absoluteTwo-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 300px;
+        background: blue;
+      }
+    </style>
+    <div class="basebox absoluteTwo-middle">center</div>
+    <div class="basebox absoluteTwo-left">left</div>
+    <div class="basebox absoluteTwo-right">right</div>
+  </div>
+
+  <!-- 网格布局方案 -->
+  <div class="box grid">
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: 300px 1fr 300px;
+        grid-template-rows: 100px;
+      }
+      .grid-left {
+        background: red;
+      }
+      .grid-middle {
+        background: yellow;
+      }
+      .grid-right {
+        background: blue;
+      }
+    </style>
+    <div class="basebox grid-left">left</div>
+    <div class="basebox grid-middle">center</div>
+    <div class="basebox grid-right">right</div>
+  </div>
+
+  <!-- Table布局方案 -->
+  <div class="box table">
+    <style>
+      .table {
+        display: table;
+        width: 100%;
+      }
+      .basebox {
+        height: 100px;
+      }
+      .tablebox {
+        display: table-cell;
+      }
+      .table-left {
+        width: 300px;
+        background: red;
+      }
+      .table-middle {
+        background: yellow;
+      }
+      .table-right {
+        width: 300px;
+        background: blue;
+      }
+    </style>
+    <div class="basebox tablebox table-left">left</div>
+    <div class="basebox tablebox table-middle">center</div>
+    <div class="basebox tablebox table-right">right</div>
+  </div>
+</body>
+</html>

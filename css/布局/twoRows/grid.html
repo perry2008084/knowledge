@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>两行布局上固定-网格布局方案</title>
+  <style>
+    html, body, .container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-rows: 100px 1fr;
+      grid-template-columns: 100%;
+    }
+    .header {
+      background: red;
+    }
+    .main {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <article class="container">
+    <header class="header"></header>
+    <main class="main"></main>
+  </article>
+</body>
+</html>

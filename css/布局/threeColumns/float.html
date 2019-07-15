@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局-浮动布局方案</title>
+  <style>
+    .left, .right, .main {
+      height: 100px;
+    }
+    .left {
+      width: 300px;
+      float: left;
+      background: red;
+    }
+    .right {
+      width: 300px;
+      float: right;
+      background: blue;
+    }
+    .main {
+      margin-left: 300px;
+      margin-right: 300px;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <aside class="left">left</aside>
+    <aside class="right">right</aside>
+    <main class="main">main</main>
+  </article>
+</body>
+</html>
