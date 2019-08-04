@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>栈</title>
+</head>
+<body>
+<script>
+  // 定义栈类
+  class Stack {
+    constructor() {
+      this.items = [];
+      this.count = 0;
+    }
+
+    push(item) {
+      if(!item) return false;
+      this.items[this.count] = item;
+      ++this.count;
+      return true;
+    }
+
+    pop() {
+      if (this.count === 0) return null;
+      let tmp = this.items.pop();
+      --this.count;
+      return tmp;
+    }
+
+    print() {
+      console.log(this.items);
+    }
+
+    getLength() {
+      console.log(this.count);
+      return this.count;
+    }
+  }
+
+  let ins = new Stack();
+  ins.push('hello');
+  ins.push('hi');
+  ins.push('good');
+  ins.print();
+  ins.getLength();
+  ins.pop();
+  ins.print();
+  ins.getLength();
+</script>
+</body>
+</html>

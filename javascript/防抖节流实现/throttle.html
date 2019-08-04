@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    body {
+      height: 2000px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function throttle(fn, interval = 300) {
+      let canRun = true;
+      return function() {
+        if (!canRun) return;
+        canRun = false;
+        setTimeout(() => {
+          fn.apply(this, arguments);
+          canRun = true;
+        }, interval);
+      };
+    }
+
+    function noThrottle() {
+      console.log('scroll');
+      let pageHeight = $('body').height(),
+          scrollTop = $(window).scrollTop(),
+          winHeight = $(window).height(),
+          thresold = pageHeight - scrollTop - winHeight;
+      if (thresold > -100 && thresold <= 20) {
+        console.log('end');
+      }
+    }
+
+    $(window).on('scroll', throttle(noThrottle))
+  </script>
+</body>
+</html>
