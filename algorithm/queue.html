@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数据结构: 队列</title>
+</head>
+<body>
+<script>
+  // 使用数据实现队列，顺序队列
+  class SeqQueue {
+    constructor() {
+      this.items = [];
+      this.head = 0;
+      this.tail = 0;
+    }
+
+    enqueue(item) {
+      this.items[this.tail] = item;
+      ++this.tail;
+      return true;
+    }
+
+    dequeu() {
+      if (this.head === this.tail) return null;
+      let ret = this.items.shift();
+      return ret;
+    }
+
+    print() {
+      console.log('queue: ', this.items);
+    }
+
+    getLength() {
+      console.log('length: ', this.items.length);
+      return this.items.length;
+    }
+  }
+
+  // Test
+  let ins = new SeqQueue();
+  ins.enqueue('hello');
+  ins.enqueue('hi');
+  ins.enqueue('good');
+  ins.print();
+  ins.getLength();
+  console.log(ins.dequeu());
+  ins.print();
+  ins.getLength();
+</script>
+</body>
+</html>
